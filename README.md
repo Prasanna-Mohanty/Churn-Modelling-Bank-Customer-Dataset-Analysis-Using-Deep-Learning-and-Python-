@@ -60,7 +60,7 @@ Now we will initialize the deep learning model as a sequence of layers</p>
 <p>Now since we have defined the model of the neural network, we will compile the model.</p>
 <p><em>classifier.compile(optimizer=’adam’,loss=’binary_crossentropy’,metrics=[‘accuracy’])</em></p>
 <h3 id="fitting-the-training-data"><strong>Fitting the training data:</strong></h3>
-<p>Now to train the neural network we have to fit the training data or feed the train data to the network .It is pretty simple, we can do this by using fit function.</p>
+<p>Now to train the neural network we have to fit the training data or feed the train data to the network .We can do this by using fit function.</p>
 <p><em>classifier.fit(X_train,y_train,batch_size=10,epochs=100)</em></p>
 <p>Now our neural network will learn from the training data by using forward propagation, gradient descent and backward propagation.</p>
 <h3 id="part-3---prediction"><strong>Part 3: -</strong> <strong>Prediction</strong></h3>
