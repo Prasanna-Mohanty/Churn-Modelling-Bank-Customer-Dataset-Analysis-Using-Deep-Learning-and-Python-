@@ -7,7 +7,7 @@
 <p>Source – Udemy/Kaggle</p>
 <p>About the Data Set: -</p>
 <p>Churn prediction is one of the most popular use cases across all industries. It consists of detecting customers of a Bank who are likely to leave in future. Churn prediction can be extremely useful for customer retention and by predicting in advance customers that are at risk of leaving.</p>
-<p>I’ve used Artificial Neural Network (Part of Deep Learning) to complete this analysis. This task is divided into different sections.</p>
+<p>I’ve used Artificial Neural Network ( which is Part of Deep Learning) to complete this analysis. This task is divided into different sections.</p>
 <p><strong>Part 1 - Data Preprocessing</strong></p>
 <p>To import and manipulate the data I’ve used the most popular packages in Python, Pandas and NumPy. Pandas is a data manipulation package and NumPy is the fundamental package for scientific computing with Python.</p>
 <p>Below is the info function of Panda</p>
@@ -32,10 +32,9 @@
 <p>dtypes: float64(2), int64(9), object(3)</p>
 <p>memory usage: 1.1+ MB</p>
 <p>This function tells us that there are 14 columns and 10,000 rows. This dataset contains 13 independent variables and one dependent variable (“Exited” column).<br>
-Now let’s separate dataset into X(independent variables) and y(dependent variable). In X we’ll slice the data frame from third column to 13th (since we don’t need “RowNumber”,”CustomerId” and “Exited”) and in y we only need “Exited”<br>
-field.</p>
+Now let’s separate dataset into X(independent variables) and y(dependent variable). In X we’ll keep from third column to 13th (since we don’t need “RowNumber”,”CustomerId” and “Exited”) and in y we only need “Exited”  field.</p>
 <p><strong>Encoding Categorical Data :-</strong></p>
-<p>We have two categorical variables (“Country” and “Gender” variable) in our data. We need to encode them. I used labelencoder and onehotencoder of scikit-learn package to achieve this. <strong>Note that I removed a dummy variable of “Country” to avoid falling into dummy variable trap.</strong></p>
+<p>We have two categorical variables (“Country” and “Gender” variable) in our data. We need to encode them. I’ve used labelencoder and onehotencoder of scikit-learn package to achieve this. <strong>Note that I’ve removed a dummy variable of “Country” to avoid falling into dummy variable trap.</strong></p>
 <p><strong>Feature scaling:</strong></p>
 <p>Feature scaling is an important part in machine learning and deep learning to ease the calculations.</p>
 <p>Now our data is well preprocessed and now we will build the artificial neural network.</p>
@@ -45,14 +44,14 @@ field.</p>
 <em>from keras.models import Sequential</em><br>
 <em>from keras.layers import Dense</em></p>
 <p>The sequential module is required to initialize the ann and dense module is required to add layers to it.<br>
-Now we will initialize the deep learning model as a sequence of layers</p>
+Next, we will initialize the deep learning model as a sequence of layers</p>
 <p><em>classifier=Sequential()</em></p>
-<p>Now we will add the input layer and hidden layer to the model.</p>
+<p>Next, we will add the input layer and hidden layer to the model.</p>
 <h4 id="adding-layers"><strong>Adding Layers:</strong></h4>
 <p><em>#first hidden layer</em><br>
 <em>classifier.add(Dense(units=6,kernel_initializer=’uniform’,activation=’relu’,input_dim=11))</em></p>
 <p>I have defined 6 units in the first hidden layer and used rectifying linear function (ReLu) as the activation function. And since input dimensions (no. of features) are 11 we will define input_dim=11.</p>
-<p>Now we will add second hidden layer</p>
+<p>Next, we will add second hidden layer</p>
 <p><em>classifier.add(Dense(units=6,kernel_initializer=’uniform’,activation=’relu’))</em></p>
 <h3 id="adding-the-output-layer"><strong>Adding the output layer:</strong></h3>
 <p><em>classifier.add(Dense(units=1,kernel_initializer=’uniform’,activation=’sigmoid’))</em></p>
